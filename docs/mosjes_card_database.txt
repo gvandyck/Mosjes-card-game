@@ -1,0 +1,797 @@
+================================================================================
+MOSJES CARD DATABASE
+COMPLETE CARD DATA FOR WEB IMPLEMENTATION
+================================================================================
+
+================================================================================
+MOSJE CARDS
+================================================================================
+
+================================================================================
+FIGHTING TYPE MOSJES
+================================================================================
+
+------------------------------------------------------------------------
+[AZN CLESS] THE WILD CARD
+------------------------------------------------------------------------
+Start MP: 10
+Traits: Physical ★★, Social ★★, Creative ★
+Unique Ability: 
+  Risk & Reward (Passive, automatic at end of turn): Roll: 1=discard 1, 
+  2-5=nothing, 6=draw 2 and gain 10 MP
+  
+  SYNERGY - West (Passive, while both active): Physical Quests give +15 
+  bonus MP. Once per turn you may look at top Quest card before attempting.
+  
+  PET SYNERGY - ViannaPoes (Activated by Piecie, costs 15 MP, lasts 2 turns): 
+  Reduce MP loss by 50%
+Rarity: ◆
+
+------------------------------------------------------------------------
+[MICHELLE] IRON TUK
+------------------------------------------------------------------------
+Start MP: 0
+Traits: Physical ★★, Social ★, Resilient ★★
+Unique Ability:
+  Tough Gamble (Passive, automatic on Quest completion): Roll: 1-3=half MP 
+  reward, 4-6=double MP reward
+  
+  SYNERGY - Gandoe (Activated by Bowie & Stormey Piecie, costs 15 MP, lasts 
+  2 turns, requires both Mosjes active): Reduce all MP loss by 75% (instead 
+  of 50%) + gain +15 MP per turn
+Rarity: ◆
+
+------------------------------------------------------------------------
+[ALYSSA] FISSA FISSA!
+------------------------------------------------------------------------
+Start MP: 10
+Traits: Physical ★★, Social ★★★, Resilient ★
+Unique Ability:
+  Party Power: Gain +15 MP when you or ally destroys a Place (max once per turn)
+Rarity: ◆
+
+------------------------------------------------------------------------
+[JEFFREY] THE STRONGMAN
+------------------------------------------------------------------------
+Start MP: 20
+Traits: Physical ★★★, Resilient ★
+Unique Ability:
+  Brute Force: All your Quests give +10 MP. Cannot use MP-restoring Piecies
+Rarity: ◆
+
+================================================================================
+DIGITAL TYPE MOSJES
+================================================================================
+
+------------------------------------------------------------------------
+[WEST] THE ANALYZER
+------------------------------------------------------------------------
+Start MP: 15
+Traits: Mental ★★★, Technical ★
+Unique Ability:
+  Calculated Guess (Activated, cost: Free, once per turn, instant): Name a 
+  card type, reveal top card of any deck. Correct=draw 2 cards + gain 10 MP. 
+  Wrong=lose 10 MP
+  
+  SYNERGY - Cless (Passive, while both active): Physical Quests give +15 
+  bonus MP. Once per turn you may look at top Quest card before attempting
+Rarity: ◆
+
+------------------------------------------------------------------------
+[COERT] THE HAWAIIAN TECH SAVANT
+------------------------------------------------------------------------
+Start MP: 10
+Traits: Mental ★★, Technical ★★★, Social ★
+Unique Ability:
+  Extra Resources (Activated during Draw Phase, cost: 10 MP per use): 
+  Draw +1 card
+  
+  SYNERGY - Binti (Passive, while both active): Gain DOUBLE MP from all 
+  Food Piecies (Kannetje Melk, Broodje Döner, Ronald Kip, Varkenspootjes, etc.)
+Rarity: ◆
+
+------------------------------------------------------------------------
+[YOURI] THE SPEEDRUNNER
+------------------------------------------------------------------------
+Start MP: 0
+Traits: Technical ★★★, Mental ★★, Resilient ★
+Unique Ability:
+  Speed Activate (Activated, cost: 20 MP, limit 3 times per game, instant): 
+  Activate a Piecie the same turn you place it, then draw 1 card
+  
+  SYNERGY - Chris (Passive, while both active): You can play Piecies without 
+  placing them face-down first (instant activation, still costs MP)
+Rarity: ◆
+
+------------------------------------------------------------------------
+[CHRIS] THE ALL-ROUNDER
+------------------------------------------------------------------------
+Start MP: 10
+Traits: Physical ★★★, Technical ★★, Social ★★
+Unique Ability:
+  Perfect Setup (Activated, cost: Free, once per turn, requires 3+ face-down 
+  Piecies, instant): Activate 1 face-down Piecie for free and gain 15 MP
+  
+  SYNERGY - Youri (Passive, while both active): You can play Piecies without 
+  placing them face-down first (instant activation, still costs MP)
+Rarity: ◆
+
+================================================================================
+ARTISTIC TYPE MOSJES
+================================================================================
+
+------------------------------------------------------------------------
+[DJ 80/20] THE LUCKY MIXER
+------------------------------------------------------------------------
+Start MP: 20
+Traits: Creative ★★★, Resilient ★★
+Unique Ability:
+  Lucky Beats: Reroll any die once per turn. Turn start: gain 10 MP
+Rarity: ◆
+
+------------------------------------------------------------------------
+[COERT] KASTELUCK
+------------------------------------------------------------------------
+Start MP: 20
+Traits: Creative ★★, Social ★★, Resilient ★
+Unique Ability:
+  Morning Luck (Passive, automatic at turn start): Roll 4-6 = play +1 Piecie 
+  this turn for free (no MP cost)
+  
+  SYNERGY - Binti (Passive, while both active): Gain DOUBLE MP from all 
+  Food Piecies (Kannetje Melk, Broodje Döner, Ronald Kip, Varkenspootjes, etc.)
+Rarity: ◆
+
+------------------------------------------------------------------------
+[CLESS] THE TEACHER
+------------------------------------------------------------------------
+Start MP: 10
+Traits: Creative ★★★, Mental ★★
+Unique Ability:
+  Teaching Moment (Passive, automatic when you activate a Piecie): Roll: 
+  5-6 = draw 1 card and gain 5 MP
+  
+  SYNERGY - West (Passive, while both active): Physical Quests give +15 
+  bonus MP. Once per turn you may look at top Quest card before attempting
+  
+  PET SYNERGY - ViannaPoes (Activated by Piecie, costs 15 MP, lasts 2 turns): 
+  Reduce MP loss by 50%
+Rarity: ◆
+
+------------------------------------------------------------------------
+[BINTI] THE SHARP TONGUE
+------------------------------------------------------------------------
+Start MP: 5
+Traits: Creative ★★, Social ★★★
+Unique Ability:
+  Cutting Words (Activated, cost: Discard 1 Piecie from hand, once per turn, 
+  instant): Target opponent discards 1 random card and loses 10 MP
+  
+  SYNERGY - Coert (Passive, while both active): Gain DOUBLE MP from all 
+  Food Piecies (Kannetje Melk, Broodje Döner, Ronald Kip, Varkenspootjes, etc.)
+Rarity: ◆
+
+================================================================================
+PIECIE CARDS
+================================================================================
+
+NOTE: Piecies must be placed face-down first and remain face-down for 1 full 
+turn before activation (unless Snelle Piecie).
+
+================================================================================
+MOMENTUM-GAINING PIECIES
+================================================================================
+
+------------------------------------------------------------------------
+KANNETJE MELK
+------------------------------------------------------------------------
+Effect: Gain 25 MP to your active Mosje
+MP Cost: Free
+Requirement: Any
+Rarity: ★★☆☆☆
+
+------------------------------------------------------------------------
+BROODJE DÖNER
+------------------------------------------------------------------------
+Effect: Gain 35 MP to your active Mosje
+MP Cost: Free
+Requirement: Lvl 1+
+Rarity: ★★★☆☆
+
+------------------------------------------------------------------------
+MOMENTUM BOOST
+------------------------------------------------------------------------
+Effect: Restore 15 MP and your next Quest gives +10 MP bonus
+MP Cost: Free
+Requirement: Lvl 1+
+Rarity: ★★★☆☆
+
+------------------------------------------------------------------------
+NATURE'S GIFT
+------------------------------------------------------------------------
+Effect: Gain 30 MP to your active Mosje. If that Mosje has Resilient ★★+, 
+gain 40 MP instead
+MP Cost: Free
+Requirement: Any
+Rarity: ★★★☆☆
+
+------------------------------------------------------------------------
+VARKENSPOOTJES
+------------------------------------------------------------------------
+Effect: BINTI'S FAVORITE - If Binti is on the field, gain 60 MP. If ANY 
+other Mosje is on the field (not Binti), lose 30 MP instead
+MP Cost: Free
+Requirement: Any
+Rarity: ★★★★☆
+
+------------------------------------------------------------------------
+ENERGY SURGE
+------------------------------------------------------------------------
+Effect: Gain 20 MP instantly. Can only be used if you have less than 30 MP
+MP Cost: Free
+Requirement: Any
+Rarity: ★★☆☆☆
+
+------------------------------------------------------------------------
+WARM KANNETJE MELK
+------------------------------------------------------------------------
+Effect: Lose 10 MP but draw 2 cards
+MP Cost: Free
+Requirement: Any
+Rarity: ★★☆☆☆
+
+------------------------------------------------------------------------
+MP AMPLIFIER
+------------------------------------------------------------------------
+Effect: Your next MP gain is increased by 50%
+MP Cost: 10 MP
+Requirement: Any
+Rarity: ★★★☆☆
+
+================================================================================
+MOMENTUM-DRAINING PIECIES (ATTACKS)
+================================================================================
+
+------------------------------------------------------------------------
+TE HARD GAAN
+------------------------------------------------------------------------
+Effect: Target opponent loses 25 MP
+MP Cost: 15 MP
+Requirement: Any
+Rarity: ★★★☆☆
+
+------------------------------------------------------------------------
+SNOEIERTJE
+------------------------------------------------------------------------
+Effect: Your next Quest drains 15 MP from opponent, but you lose 15 MP at 
+end turn
+MP Cost: Free
+Requirement: Any
+Rarity: ★★★☆☆
+
+------------------------------------------------------------------------
+KLEINE TAKS
+------------------------------------------------------------------------
+Effect: Target opponent loses 10 MP per turn for 4 turns (total 40 MP). If 
+they complete a Quest during this effect, they still lose the MP at end of turn
+MP Cost: 15 MP
+Requirement: Lvl 1+
+Rarity: ★★★☆☆
+
+------------------------------------------------------------------------
+AFFOE
+------------------------------------------------------------------------
+Effect: Target opponent loses 15 MP, you gain 10 MP
+MP Cost: 5 MP
+Requirement: Any
+Rarity: ★★☆☆☆
+
+================================================================================
+UTILITY PIECIES
+================================================================================
+
+------------------------------------------------------------------------
+GUN EEN PIECE
+------------------------------------------------------------------------
+Effect: Draw 2 cards from your deck
+MP Cost: Free
+Requirement: Any
+Rarity: ★★★☆☆
+
+------------------------------------------------------------------------
+ZIE JE DIE DINGETJES
+------------------------------------------------------------------------
+Effect: Look at top 3 of your deck, pick and draw 1
+MP Cost: Free
+Requirement: Lvl 1+
+Rarity: ★★★★☆
+
+------------------------------------------------------------------------
+SLECHT GEZET
+------------------------------------------------------------------------
+Effect: Destroy active Place card
+MP Cost: Free
+Requirement: Any
+Rarity: ★★★☆☆
+
+------------------------------------------------------------------------
+TWEEDEKANS
+------------------------------------------------------------------------
+Effect: Reroll any die once this turn
+MP Cost: 5 MP
+Requirement: Any
+Rarity: ★★☆☆☆
+
+------------------------------------------------------------------------
+BAGGA OF GREED
+------------------------------------------------------------------------
+Effect: Draw 3 cards, then discard 1
+MP Cost: Free
+Requirement: Any
+Rarity: ★★★☆☆
+
+------------------------------------------------------------------------
+QUEST PREP
+------------------------------------------------------------------------
+Effect: Your next Quest roll gets +2 to the result
+MP Cost: 10 MP
+Requirement: Any
+Rarity: ★★★☆☆
+
+------------------------------------------------------------------------
+AFBLIJVEN!
+------------------------------------------------------------------------
+Effect: Your Mosje cannot lose MP from opponent effects until your next turn
+MP Cost: 10 MP
+Requirement: Any
+Rarity: ★★☆☆☆
+
+------------------------------------------------------------------------
+LAAT ME CHILLEN!
+------------------------------------------------------------------------
+Effect: Next time you would lose MP, reduce it by 20
+MP Cost: 10 MP
+Requirement: Any
+Rarity: ★★☆☆☆
+
+------------------------------------------------------------------------
+SYNERGY FIELD
+------------------------------------------------------------------------
+Effect: This card stays on field for 3 turns: All Mosje abilities that restore 
+MP restore +10 additional MP. When effect ends, send this card to discard
+MP Cost: 15 MP
+Requirement: Any
+Rarity: ★★★★☆
+
+------------------------------------------------------------------------
+EMERGENCY SWAP
+------------------------------------------------------------------------
+Effect: Choose any Mosje card from any player's deck or field. Your active 
+Mosje copies and uses that Mosje's ability this turn (you must pay any 
+activation costs required by that ability). The chosen Mosje can still use 
+their own ability normally
+MP Cost: 30 MP
+Requirement: Lvl 1+
+Rarity: ★★★☆☆
+
+================================================================================
+DIGITAL EQUIPMENT PIECIES
+================================================================================
+
+------------------------------------------------------------------------
+KEYBOARD
+------------------------------------------------------------------------
+Effect: If you have a Digital-type Mosje on field: Gain 10 MP and draw 1 card. 
+Can be combined with Mouse and Controller for enhanced effects
+MP Cost: Free
+Requirement: Any
+Rarity: ★★☆☆☆
+
+------------------------------------------------------------------------
+MOUSE
+------------------------------------------------------------------------
+Effect: If you have a Digital-type Mosje on field: Gain 10 MP and look at 
+top 2 cards of any deck. Can be combined with Keyboard and Controller for 
+enhanced effects
+MP Cost: Free
+Requirement: Any
+Rarity: ★★☆☆☆
+
+------------------------------------------------------------------------
+CONTROLLER
+------------------------------------------------------------------------
+Effect: If you have a Digital-type Mosje on field: Gain 10 MP and your next 
+Quest roll gets +1. Can be combined with Keyboard and Mouse for enhanced effects
+MP Cost: Free
+Requirement: Any
+Rarity: ★★☆☆☆
+
+================================================================================
+PET PROTECTION PIECIES
+================================================================================
+
+------------------------------------------------------------------------
+VIANNA POES
+------------------------------------------------------------------------
+Effect: 2 turns: Cless/Hayabusa reduce MP loss by 50%
+MP Cost: 15 MP
+Requirement: Any
+Rarity: ★★★☆☆
+
+------------------------------------------------------------------------
+BOWIE & STORMEY
+------------------------------------------------------------------------
+Effect: 2 turns: Gandoe/DJ/Tuk/Michelle reduce MP loss by 50%. SYNERGY BONUS: 
+With Gandoe + Tuk OR Gandoe + Michelle both on field = 75% reduction + gain 
++15 MP per turn
+MP Cost: 15 MP
+Requirement: Any
+Rarity: ★★★★☆
+
+================================================================================
+SUBSTANCE PIECIES (HIGH RISK/REWARD)
+================================================================================
+
+------------------------------------------------------------------------
+GRAMMETJE PIETER
+------------------------------------------------------------------------
+Effect: Roll: 1-3 = lose 15 MP, 4-6 = gain 30 MP
+MP Cost: Free
+Requirement: Any
+Rarity: ★★☆☆☆
+
+------------------------------------------------------------------------
+DIKKE JONKO
+------------------------------------------------------------------------
+Effect: You gain 25 MP, each opponent gains 10 MP, all draw 1
+MP Cost: Free
+Requirement: Lvl 1+
+Rarity: ★★★☆☆
+
+------------------------------------------------------------------------
+LARRY / ZEGELTJE
+------------------------------------------------------------------------
+Effect: Roll: 1-2 = lose 25 MP and discard 1 card, 3-4 = gain 20 MP, 5-6 = 
+gain 40 MP and draw 2 cards. Can be used as requirement for "Larry Temmen 
+Niemand Zeggen" Quest
+MP Cost: Free
+Requirement: Any
+Rarity: ★★★☆☆
+
+================================================================================
+SNELLE PIECIES (INSTANT CARDS)
+================================================================================
+
+NOTE: Can be played directly from hand at any time, even during opponent's turn.
+
+------------------------------------------------------------------------
+FF HAALTJE NEMEN
+------------------------------------------------------------------------
+Effect: Reduce MP loss by 20 (Resilient ★★: by 30)
+MP Cost: 10 MP
+Requirement: Any
+Rarity: ★☆☆☆☆
+
+------------------------------------------------------------------------
+EMERGENCY HEALINGS
+------------------------------------------------------------------------
+Effect: Restore 25 MP instantly (Resilient ★★: 35 MP)
+MP Cost: 10 MP
+Requirement: Any
+Rarity: ★★☆☆☆
+
+------------------------------------------------------------------------
+LUCKY CÓIN
+------------------------------------------------------------------------
+Effect: Reroll dice (Creative ★★★: choose result)
+MP Cost: 10 MP
+Requirement: Creative ★
+Rarity: ★☆☆☆☆
+
+------------------------------------------------------------------------
+COUNTER STRIKKA
+------------------------------------------------------------------------
+Effect: Redirect Piecie to another target (Mental ★★★: draw 1)
+MP Cost: 15 MP
+Requirement: Mental ★★
+Rarity: ★★☆☆☆
+
+------------------------------------------------------------------------
+MOMENTUM RUSH
+------------------------------------------------------------------------
+Effect: Gain 15 MP instantly and draw 1 card
+MP Cost: Free
+Requirement: Any
+Rarity: ★★☆☆☆
+
+------------------------------------------------------------------------
+JENSEN
+------------------------------------------------------------------------
+Effect: Ignore a Piecie that specifically targets your Mosje
+MP Cost: 10 MP
+Requirement: Any
+Rarity: ★★★☆☆
+
+------------------------------------------------------------------------
+SLEUTELPUNTJE
+------------------------------------------------------------------------
+Effect: Instantly adjust your MP by ±15 before a Quest roll or ability activation. 
+Quick boost when you need it most
+MP Cost: 5 MP
+Requirement: Any
+Rarity: ★★★☆☆
+
+================================================================================
+PLACE CARDS
+================================================================================
+
+NOTE: Only 1 Place can be active at a time. Cannot be overwritten, only 
+destroyed by effects.
+
+------------------------------------------------------------------------
+THE GYM
+------------------------------------------------------------------------
+Effect: All lose 10 MP/turn. Fighting gain 25 MP/turn. Physical ★★★ gain 35 MP/turn
+Good For: Fighting
+Bad For: Others
+Rarity: ★★★
+
+------------------------------------------------------------------------
+ARCADE
+------------------------------------------------------------------------
+Effect: Physical trait Mosjes gain +10 MP when they activate Piecies
+Good For: Physical
+Bad For: Mental
+Rarity: ★★★
+
+------------------------------------------------------------------------
+OBBY 1
+------------------------------------------------------------------------
+Effect: Each Mosje loses 10 MP/turn. Quest rewards give +15 additional MP
+Good For: Quest-focus
+Bad For: Passive
+Rarity: ★★★
+
+------------------------------------------------------------------------
+BANK CHILLING
+------------------------------------------------------------------------
+Effect: Mental ★★+ gain +15 MP when drawing 2+ cards in one turn
+Good For: Mental
+Bad For: Physical
+Rarity: ★★★
+
+------------------------------------------------------------------------
+SKIFFA
+------------------------------------------------------------------------
+Effect: Artistic reroll 1 die. Digital lose 10 MP when activated. Creative 
+★★★ reroll 2 dice
+Good For: Artistic
+Bad For: Digital
+Rarity: ★★★
+
+------------------------------------------------------------------------
+QUEST HAVEN
+------------------------------------------------------------------------
+Effect: All Quest rewards +10 MP. Complete 2 Quests in one turn = additional 
++25 MP bonus
+Good For: All
+Bad For: None
+Rarity: ★★★★
+
+------------------------------------------------------------------------
+MOMENTUM FACTORY
+------------------------------------------------------------------------
+Effect: All Mosjes gain 5 MP at turn start. Can't attack or drain MP
+Good For: Defensive
+Bad For: Aggressive
+Rarity: ★★★★
+
+------------------------------------------------------------------------
+DIGITAL GAMING STOP
+------------------------------------------------------------------------
+Effect: When you activate a Digital Equipment Piecie (Keyboard, Mouse, 
+Controller) while this Place is active, gain +5 additional MP. If you activate 
+all 3 Digital Equipment Piecies in one turn: Draw 3 cards, gain 30 MP, and 
+your Digital Mosje can complete 2 Quests this turn (once per game while this 
+Place is active)
+Good For: Digital-type Mosjes
+Bad For: Non-digital decks
+Rarity: ★★★★
+
+================================================================================
+QUEST CARDS
+================================================================================
+
+NOTE: Shared deck all players draw from. Complete Quests to gain Momentum!
+
+================================================================================
+PHYSICAL QUESTS
+================================================================================
+
+------------------------------------------------------------------------
+ARM WRESTLING
+------------------------------------------------------------------------
+Requirement: Roll: Phys ★ = 5+, ★★ = 3+, ★★★ = 2+
+Success: +40 MP
+Failure: -60 MP
+Rarity: ★★
+
+------------------------------------------------------------------------
+PARKOUR CHALLENGE
+------------------------------------------------------------------------
+Requirement: Pay 10 MP + Roll 4+
+Success: +50 MP
+Failure: -70 MP
+Rarity: ★★★
+
+------------------------------------------------------------------------
+SPRINT RACE
+------------------------------------------------------------------------
+Requirement: Physical ★★+ auto success
+Success: +70 MP
+Failure: -80 MP
+Rarity: ★★
+
+------------------------------------------------------------------------
+ENDURANCE TEST
+------------------------------------------------------------------------
+Requirement: Have 60+ MP OR Phys ★★★
+Success: +60 MP
+Failure: -70 MP
+Rarity: ★★★
+
+================================================================================
+MENTAL QUESTS
+================================================================================
+
+------------------------------------------------------------------------
+STRATEGY PUZZLE
+------------------------------------------------------------------------
+Requirement: Mental ★★ + Discard 1 card
+Success: +25 MP
+Failure: -20 MP
+Rarity: ★★
+
+------------------------------------------------------------------------
+CALCULATE ODDS
+------------------------------------------------------------------------
+Requirement: Reveal top 3: if 2+ same type succeed
+Success: +20 MP
+Failure: -10 MP
+Rarity: ★★★
+
+------------------------------------------------------------------------
+QUICK THINKING
+------------------------------------------------------------------------
+Requirement: Roll: Mental ★ = 5+, ★★ = 4+, ★★★ = 3+
+Success: +20 MP
+Failure: -20 MP
+Rarity: ★★
+
+================================================================================
+SOCIAL QUESTS
+================================================================================
+
+------------------------------------------------------------------------
+INSPIRE CROWD
+------------------------------------------------------------------------
+Requirement: Roll: Social ★ = 5+, ★★ = 4+, ★★★ = 3+
+Success: +25 MP
+Failure: -20 MP
+Rarity: ★★★
+
+------------------------------------------------------------------------
+TEAM BUILDING
+------------------------------------------------------------------------
+Requirement: Social ★★+ auto success
+Success: +22 MP
+Failure: -40 MP
+Rarity: ★★
+
+================================================================================
+CREATIVE QUESTS
+================================================================================
+
+------------------------------------------------------------------------
+ARTISTIC EXPRESSION
+------------------------------------------------------------------------
+Requirement: Creative ★★ + Draw 2 cards
+Success: +40 MP
+Failure: -10 MP
+Rarity: ★★
+
+------------------------------------------------------------------------
+IMPROVISE!
+------------------------------------------------------------------------
+Requirement: Creative ★★★ OR pay 15 MP
+Success: +50 MP
+Failure: -20 MP
+Rarity: ★★★
+
+------------------------------------------------------------------------
+LUCKY BREAK
+------------------------------------------------------------------------
+Requirement: Roll: Creative ★ = 5+, ★★ = 4+, ★★★ = 2+
+Success: +70 MP
+Failure: -40 MP
+Rarity: ★★★
+
+------------------------------------------------------------------------
+CREATE MASTERPIECE
+------------------------------------------------------------------------
+Requirement: Creative ★★ + 3+ Piecies in play
+Success: +60 MP
+Failure: -20 MP
+Rarity: ★★★★
+
+================================================================================
+TECHNICAL QUESTS
+================================================================================
+
+------------------------------------------------------------------------
+DEBUG SYSTEM
+------------------------------------------------------------------------
+Requirement: Tech ★★ + Look at top 5 of any deck
+Success: +40 MP
+Failure: -60 MP
+Rarity: ★★
+
+------------------------------------------------------------------------
+PRECISION WORK
+------------------------------------------------------------------------
+Requirement: Roll: Tech ★ = 5+, ★★ = 4+, ★★★ = 3+
+Success: +70 MP
+Failure: -70 MP
+Rarity: ★★
+
+================================================================================
+RESILIENT QUESTS
+================================================================================
+
+------------------------------------------------------------------------
+SURVIVE STORM
+------------------------------------------------------------------------
+Requirement: Resilient ★★ OR have less than 30 MP
+Success: +30 MP
+Failure: -50 MP
+Rarity: ★★
+
+------------------------------------------------------------------------
+TOUGH IT OUT
+------------------------------------------------------------------------
+Requirement: Roll: Res ★ = 5+, ★★ = 4+, ★★★ = 3+
+Success: +80 MP
+Failure: -80 MP
+Rarity: ★★
+
+================================================================================
+MIXED/SPECIAL QUESTS
+================================================================================
+
+------------------------------------------------------------------------
+LEAP OF FAITH
+------------------------------------------------------------------------
+Requirement: Roll: 1-3 = Fail, 4-6 = Success
+Success: +60 MP
+Failure: -20 MP
+Rarity: ★★★★
+
+------------------------------------------------------------------------
+SPEED RUN
+------------------------------------------------------------------------
+Requirement: Activate 2 Piecies this turn
+Success: +60 MP
+Failure: -50 MP
+Rarity: ★★★
+
+------------------------------------------------------------------------
+THE GAUNTLET
+------------------------------------------------------------------------
+Requirement: Complete 3 different actions this turn
+Success: +50 MP
+Failure: -15 MP
+Rarity: ★★★★
+
+================================================================================
+END OF CARD DATABASE
+================================================================================

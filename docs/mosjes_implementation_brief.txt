@@ -1,0 +1,303 @@
+================================================================================
+MOSJES CARD GAME
+WEB MULTIPLAYER IMPLEMENTATION BRIEF FOR GEMINI AI
+================================================================================
+
+================================================================================
+PROJECT OVERVIEW
+================================================================================
+
+Create a simple web-based multiplayer card game implementation of MOSJES that 
+can be hosted on a static website. The game should support 2 players using a 
+unique room code system for matchmaking.
+
+================================================================================
+TECHNICAL REQUIREMENTS
+================================================================================
+
+------------------------------------------------------------------------
+PLATFORM & HOSTING
+------------------------------------------------------------------------
+
+• Single HTML file (`index.html`) with linked CSS (`style.css`) and JavaScript (`script.js`).
+• Use Firebase Realtime Database for multiplayer synchronization (free tier)
+• Should work on modern browsers (Chrome, Firefox, Safari)
+• Mobile-responsive design
+• No installation required - just visit URL
+
+------------------------------------------------------------------------
+MULTIPLAYER SYSTEM - ROOM CODE APPROACH
+------------------------------------------------------------------------
+
+• Player 1 creates a game → receives a short room code
+• Player 2 enters room code to join
+• Only 2 players per room
+
+================================================================================
+CORE GAME IMPLEMENTATION
+================================================================================
+
+------------------------------------------------------------------------
+PHASE 1: ESSENTIAL FEATURES (IMPLEMENTED)
+------------------------------------------------------------------------
+
+GAME SETUP:
+• Each player selects a starter deck archetype.
+• The system assigns 2 random Mosjes from the chosen deck to each player.
+• Auto-generates a 40-card starter deck.
+• Shared Quest deck (shuffled, face-down).
+• Single Place card slot (shared between players).
+
+GAME BOARD LAYOUT STRUCTURE:
+
+Opponent Area (Top):
+  • 2 Mosje Slots [Mosje 1] [Mosje 2]
+  • Face-down Piecie slots
+  • A visible count of the opponent's face-down Piecies.
+
+Shared Center Area:
+  • Quest Deck & Active Quest Display
+  • Shared Place Card Slot
+  • Turn & Phase Indicator Area
+
+Your Area (Bottom):
+  • Your Hand (cards visible only to you)
+  • 2 Mosje Slots [Mosje 1] [Mosje 2] (top row of your field)
+  • Face-down Piecie slots (below your Mosjes)
+  • Deck, Discard, and Hand counts.
+
+------------------------------------------------------------------------
+TURN STRUCTURE AUTOMATION
+------------------------------------------------------------------------
+
+A single, dynamic button (`progressPhaseBtn`) controls the game flow. Its text and function change based on the current phase.
+
+1. DRAW PHASE:
+   • "Draw" button is enabled.
+   • `progressPhaseBtn` shows "End Draw Phase". Clicking it moves to Main Phase.
+
+2. MAIN PHASE:
+   • "Place Piecie" and "Activate Placed" buttons are enabled.
+   • `progressPhaseBtn` shows "End Main Phase". Clicking it moves to Quest Phase.
+
+3. QUEST PHASE:
+   • "Draw & Attempt Quest" button is enabled.
+   • `progressPhaseBtn` shows "End Turn". Clicking it passes the turn to the opponent and resets the phase to Draw.
+
+================================================================================
+VISUAL DESIGN REQUIREMENTS
+================================================================================
+
+------------------------------------------------------------------------
+CARD DISPLAY
+------------------------------------------------------------------------
+
+• MOSJE CARDS: Show name, MP, Level, traits, ability text, and flavor text.
+• PIECIE CARDS: Name, MP cost, effect text, requirement, rarity (★☆☆☆☆)
+• QUEST CARDS: Name, requirement, success reward, failure penalty
+• PLACE CARDS: Name, effect description, good for / bad for
+
+------------------------------------------------------------------------
+GAME STATE INDICATORS
+------------------------------------------------------------------------
+
+• MP Counter: Large, visible numbers with +/- animation
+• Level Indicator: Level 1/2/3 with progress bar (0-100 MP)
+• Active Player: Highlighted border around active player's area
+• Card States:
+  - Face-down (card back design)
+  - Face-up (full card visible)
+  - Disabled (grayed out if can't be played)
+  - Glowing (if playable this turn)
+
+------------------------------------------------------------------------
+INTERACTION FEEDBACK
+------------------------------------------------------------------------
+
+• Hover effects on playable cards
+• Click/tap confirmation for major actions
+• MP change animations (+25 MP floats up, -25 MP floats down in red)
+• Dice roll animation (3D rotating die)
+• Turn timer (optional - 90 seconds per turn)
+
+================================================================================
+GAME LOGIC TO AUTOMATE
+================================================================================
+
+------------------------------------------------------------------------
+MP MANAGEMENT
+------------------------------------------------------------------------
+
+• Auto-track MP for each Mosje separately
+• Show warning if trying to spend more MP than available
+• Auto-apply Place effects at turn start/end
+• Level Up detection (100 MP → Level up, reset to 0 MP)
+• Victory condition check (first to Level 3 wins)
+
+------------------------------------------------------------------------
+CARD REQUIREMENTS
+------------------------------------------------------------------------
+
+• Check if player meets trait requirements before allowing Quest attempt
+• Verify MP cost before Piecie activation
+• Check if Piecie has been face-down 1+ turn before activation
+• Validate Snelle Piecie can be played (instant timing)
+
+------------------------------------------------------------------------
+QUEST RESOLUTION EXAMPLE
+------------------------------------------------------------------------
+
+Quest: "Arm Wrestling"
+
+• System checks active Mosje's Physical trait
+• Shows required roll:
+  - Physical ★ = need 5+
+  - Physical ★★ = need 3+
+  - Physical ★★★ = need 2+
+• Player clicks "Roll Dice"
+• Animate dice (random 1-6)
+• Compare result to requirement
+• Success = +40 MP (with animation)
+• Failure = -60 MP (with red animation)
+
+------------------------------------------------------------------------
+DICE ROLLING
+------------------------------------------------------------------------
+
+• Visual 6-sided die animation
+• Fair random number generation (1-6)
+• Show result clearly with 2-second delay
+• Apply modifiers (Quest Prep, Controller, etc.) automatically
+
+================================================================================
+SIMPLIFIED RULES FOR IMPLEMENTATION
+================================================================================
+
+------------------------------------------------------------------------
+TURN FLOW
+------------------------------------------------------------------------
+
+• Player 1 goes first
+• Each turn: Draw → Main Phase → Quest Phase → End Turn
+• No interruption during opponent's turn (Snelle Piecies can be implemented later)
+• Clear "Your Turn" / "Opponent's Turn" indicator
+
+------------------------------------------------------------------------
+STARTING CONDITIONS
+------------------------------------------------------------------------
+
+• Each player starts with 2 Mosjes at Level 1, 0 MP
+• Draw 5 cards to start
+• No Place card active initially
+• Quest deck shuffled and shared
+
+------------------------------------------------------------------------
+WIN CONDITIONS (SIMPLIFIED)
+------------------------------------------------------------------------
+
+• PRIMARY: First player to reach Level 3 with any Mosje wins
+• SECONDARY: If opponent has both Mosjes at 0 MP and no cards = you win
+
+================================================================================
+USER INTERFACE PRIORITIES
+================================================================================
+
+------------------------------------------------------------------------
+MUST-HAVE UI ELEMENTS
+------------------------------------------------------------------------
+
+1. Room Code Display: Large, copyable code at top
+2. MP Counters: Massive, impossible to miss
+3. Hand Management: Clear card fan, easy drag-drop
+4. Action Buttons: "Draw Card", "Attempt Quest", "End Turn", "Activate Piecie"
+5. Game Log: Scrolling text log of all actions (bottom corner)
+6. Opponent Hand Count: "Opponent has 6 cards" (don't show actual cards)
+
+------------------------------------------------------------------------
+NICE-TO-HAVE UI ELEMENTS
+------------------------------------------------------------------------
+
+• Card zoom on hover
+• Deck remaining count
+• Discard pile viewer
+• MP change history
+• Turn counter
+
+================================================================================
+DESIGN AESTHETIC
+================================================================================
+
+------------------------------------------------------------------------
+VISUAL STYLE
+------------------------------------------------------------------------
+
+• Clean, modern card game interface
+• Dark background (#1a1a2e recommended)
+• Bright, readable cards
+• Smooth animations (but not overwhelming)
+• Clear typography (Roboto or similar)
+
+------------------------------------------------------------------------
+COLOR CODING
+------------------------------------------------------------------------
+
+• Fighting Type: Red/Orange (#ff6b6b)
+• Digital Type: Blue/Cyan (#4ecdc4)
+• Artistic Type: Purple/Pink (#c44569)
+• MP Gain: Green (#26de81)
+• MP Loss: Red (#fc5c65)
+• Neutral Effects: Yellow (#fed330)
+
+================================================================================
+PRIORITY ORDER
+================================================================================
+
+1. CRITICAL: Basic turn structure, MP tracking, Quest resolution
+
+2. HIGH: Room code system, 2-player sync, win condition
+
+3. MEDIUM: Place cards, Snelle Piecies (instant play)
+
+4. LOW: Advanced synergies, animations, chat
+
+================================================================================
+DELIVERABLES NEEDED
+================================================================================
+
+1. SINGLE HTML FILE with embedded CSS/JavaScript (easy hosting)
+
+2. FIREBASE CONFIG INSTRUCTIONS (step-by-step setup)
+
+3. README.MD with:
+   • How to host (Netlify, Vercel, GitHub Pages)
+   • How to play (basic rules summary)
+   • Known limitations
+   • How to add cards to the database
+
+================================================================================
+TECHNICAL CONSTRAINTS
+================================================================================
+
+• Keep file size under 5MB total
+• Use CDN for libraries (Firebase, maybe Vue.js for reactivity)
+• Optimize for 1920x1080 desktop and 390x844 mobile
+• Maximum 50 cards visible on screen simultaneously
+• Game state sync every 500ms (not real-time, semi-real-time is fine)
+
+================================================================================
+IMPLEMENTATION FOCUS
+================================================================================
+
+Build this game focusing on the CRITICAL and HIGH priority features first. 
+Create a playable prototype where two players can take turns, play Piecies, 
+complete Quests, and race to Level 3. The game doesn't need to be perfect - 
+it needs to be functional for playtesting balance and gameplay flow.
+
+Start with the HTML structure and basic game loop. Card data will be provided 
+in a separate document (see MOSJES_Card_Database.txt).
+
+For pre-built deck configurations, see MOSJES_Starter_Decks.txt.
+
+================================================================================
+END OF IMPLEMENTATION BRIEF
+================================================================================
