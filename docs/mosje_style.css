@@ -1,0 +1,125 @@
+/* New Mosje Card Design */
+.mosje-card {
+    width: 280px;
+    height: 400px;
+    border-radius: 16px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+    background-color: #1a1a2e;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border: 2px solid #333;
+    transition: transform 0.2s;
+}
+
+.mosje-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.6);
+}
+
+/* Top Bar: Name and HP */
+.mosje-header {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    z-index: 2;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+}
+
+.mosje-title-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.mosje-name {
+    font-size: 32px;
+    font-weight: 900;
+    line-height: 1;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+}
+
+.mosje-flavor {
+    font-size: 14px;
+    font-style: italic;
+    opacity: 0.9;
+    margin-top: 4px;
+    font-weight: 500;
+}
+
+.mosje-hp {
+    font-size: 24px;
+    font-weight: 800;
+    text-align: right;
+}
+
+.mosje-hp span {
+    font-size: 14px;
+    font-weight: 600;
+    opacity: 0.8;
+    margin-right: 2px;
+}
+
+/* Bottom Area: Gradient Overlay */
+.mosje-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 80px 20px 20px 20px;
+    background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.8) 40%, rgba(0,0,0,0) 100%);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.mosje-traits {
+    display: flex;
+    gap: 15px;
+    font-size: 13px;
+    font-weight: 600;
+    opacity: 0.9;
+}
+
+.mosje-trait-item {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.mosje-ability {
+    font-size: 14px;
+    line-height: 1.4;
+    opacity: 0.95;
+}
+
+.mosje-ability strong {
+    color: #fff;
+    font-weight: 700;
+    display: block;
+    margin-bottom: 4px;
+    font-size: 15px;
+}
+
+.mosje-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 8px;
+    font-size: 10px;
+    opacity: 0.6;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Rarity/Set Icon placeholder */
+.mosje-icon {
+    font-size: 14px;
+}

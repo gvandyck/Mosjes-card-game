@@ -2,7 +2,7 @@
 # Configuration
 HOST="eightytwenty.nl"
 USER="YOUR_USERNAME"
-REMOTE_PATH="/path/to/public_html/cardgame"
+REMOTE_PATH="/path/to/public_html/cardgame/logic"
 LOCAL_PATH="./docs/"
 
 # Check if rsync is installed

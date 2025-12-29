@@ -1,0 +1,76 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - generic [ref=e3]:
+    - heading "Mosjes Card Game" [level=2] [ref=e4]
+    - generic [ref=e5]:
+      - generic [ref=e6]:
+        - heading "1. Choose Your Deck" [level=3] [ref=e7]
+        - generic [ref=e8]:
+          - generic [ref=e9] [cursor=pointer]:
+            - generic [ref=e10]: Physical Force
+            - generic [ref=e11]: Aggressive, High MP, Strong Attacks
+          - generic [ref=e12] [cursor=pointer]:
+            - generic [ref=e13]: Digital Control
+            - generic [ref=e14]: Tactical, Card Advantage, Manipulation
+          - generic [ref=e15] [cursor=pointer]:
+            - generic [ref=e16]: Artistic Rhythm
+            - generic [ref=e17]: Combo, Rerolls, High Variance
+      - generic [ref=e18]:
+        - heading "2. Start Game" [level=3] [ref=e19]
+        - generic [ref=e20]:
+          - button "Create Room" [ref=e21] [cursor=pointer]
+          - generic [ref=e22]: You will be Player 1
+        - generic [ref=e23]:
+          - generic [ref=e24]:
+            - textbox "Enter Room Code" [ref=e25]
+            - button "Join" [ref=e26] [cursor=pointer]
+          - generic [ref=e27]: You will be Player 2
+  - generic [ref=e29]:
+    - generic [ref=e30]:
+      - strong [ref=e31]: "Room:"
+      - generic [ref=e32]: "--"
+      - generic [ref=e33]: Not connected
+    - generic [ref=e34]: Waiting
+  - generic [ref=e36]:
+    - generic [ref=e38]:
+      - generic [ref=e40]:
+        - generic [ref=e41]: Shared Place
+        - generic [ref=e42]: No Place
+      - generic [ref=e43]:
+        - generic [ref=e44]:
+          - generic [ref=e46]:
+            - strong [ref=e47]: Opponent
+            - generic [ref=e48]: "MP: 0"
+          - generic [ref=e50]: "Piecies: 0"
+        - generic [ref=e51]:
+          - generic [ref=e52]:
+            - generic [ref=e53]:
+              - strong [ref=e54]: You
+              - generic [ref=e55]: "MP: 0"
+            - generic [ref=e56]: "Hand: 0"
+          - generic [ref=e57]:
+            - generic [ref=e58]: Drag cards here to place them
+            - button "Activate Placed" [ref=e59] [cursor=pointer]
+        - generic [ref=e60]:
+          - generic [ref=e61]:
+            - strong [ref=e63]: Your Hand
+            - generic [ref=e64]: "Deck: 0 | Discard: 0"
+          - generic [ref=e66]:
+            - button "Draw" [ref=e67] [cursor=pointer]
+            - button "Show Deck" [ref=e68] [cursor=pointer]
+            - button "Show Graveyard" [ref=e69] [cursor=pointer]
+      - generic [ref=e72]:
+        - generic [ref=e73]: Quest Deck
+        - generic [ref=e74]: No active quest
+        - button "Attempt Quest" [ref=e76] [cursor=pointer]
+    - generic [ref=e77]:
+      - generic [ref=e78]:
+        - strong [ref=e80]: Your Hand
+        - generic [ref=e81]: "Deck: 0 | Discard: 0"
+      - generic [ref=e83]:
+        - button "Draw" [ref=e84] [cursor=pointer]
+        - button "End Main" [ref=e85] [cursor=pointer]
+        - button "End Turn" [ref=e86] [cursor=pointer]
+```

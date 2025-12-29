@@ -20,7 +20,7 @@ Unique Ability:
   Risk & Reward (Passive, automatic at end of turn): Roll: 1=discard 1, 
   2-5=nothing, 6=draw 2 and gain 10 MP
   
-  SYNERGY - West (Passive, while both active): Physical Quests give +15 
+  SYNERGY - Martin (Passive, while both active): Physical Quests give +15 
   bonus MP. Once per turn you may look at top Quest card before attempting.
   
   PET SYNERGY - ViannaPoes (Activated by Piecie, costs 15 MP, lasts 2 turns): 
@@ -33,12 +33,31 @@ Rarity: ◆
 Start MP: 0
 Traits: Physical ★★, Social ★, Resilient ★★
 Unique Ability:
-  Tough Gamble (Passive, automatic on Quest completion): Roll: 1-3=half MP 
-  reward, 4-6=double MP reward
-  
-  SYNERGY - Gandoe (Activated by Bowie & Stormey Piecie, costs 15 MP, lasts 
-  2 turns, requires both Mosjes active): Reduce all MP loss by 75% (instead 
-  of 50%) + gain +15 MP per turn
+  Tough Gamble (Passive)
+  On Quest completion, roll:
+  1-3 = Half MP reward
+  4-6 = Double MP reward
+
+  Synergy - Gandoe
+  (Requires Bowie & Stormey Piecie active & Gandoe Mosje on the field)
+  Cost: 15 MP | Duration: 2 turns
+Effect:
+
+Reduce all MP loss by 75% (instead of 50%)
+Both Mosjes gain +15 MP per turn
+Rarity: ◆
+
+------------------------------------------------------------------------
+[GANDOE] THE DESTROYER
+------------------------------------------------------------------------
+Start MP: 0
+Traits: Physical ★★★, Resilient ★★
+Unique Ability:
+Elimination Strike (Activated, Instant)
+Cost: 80 MP (required, this Mosje has to have more than 80 MP)
+Limit Unique Abilty Activation: Once per game
+Effect:Send opponent's lowest-level Mosje to graveyard
+Targeting: If opponent has multiple Mosjes at same level, opponent chooses which Mosje gets sent to Graveyard
 Rarity: ◆
 
 ------------------------------------------------------------------------
@@ -51,6 +70,18 @@ Unique Ability:
 Rarity: ◆
 
 ------------------------------------------------------------------------
+[ALYSSA] THE BULLDOZER
+------------------------------------------------------------------------
+Start MP: 0
+Traits: Physical ★★★, Resilient ★★, Social ★★★
+Unique Ability:
+  Unstoppable: Draw 2 cards, choose 1 and discard the other card to Graveyard. 
+  Attempting Quests instantly +10 MP to Alyssa. 
+  When Alyssa loses 30 MP or more in one turn Alyssa regains 25 MP.
+Rarity: ◆◆
+
+
+------------------------------------------------------------------------
 [JEFFREY] THE STRONGMAN
 ------------------------------------------------------------------------
 Start MP: 20
@@ -59,12 +90,23 @@ Unique Ability:
   Brute Force: All your Quests give +10 MP. Cannot use MP-restoring Piecies
 Rarity: ◆
 
+
 ================================================================================
 DIGITAL TYPE MOSJES
 ================================================================================
 
 ------------------------------------------------------------------------
-[WEST] THE ANALYZER
+[RONALD] THE MASTER CHEF
+------------------------------------------------------------------------
+Start MP: 0
+Traits: Mental ★★, Technical ★★, Resilient ★★
+Unique Ability:
+  Master Chef (Activated, once per turn):
+  Discard a Food Piecie from your hand. If you do, search your deck for any card and add it to your hand.
+Rarity: ◆◆
+
+------------------------------------------------------------------------
+[MARTIN] SEÑOR WEST
 ------------------------------------------------------------------------
 Start MP: 15
 Traits: Mental ★★★, Technical ★
@@ -151,7 +193,7 @@ Unique Ability:
   Teaching Moment (Passive, automatic when you activate a Piecie): Roll: 
   5-6 = draw 1 card and gain 5 MP
   
-  SYNERGY - West (Passive, while both active): Physical Quests give +15 
+  SYNERGY - Martin (Passive, while both active): Physical Quests give +15 
   bonus MP. Once per turn you may look at top Quest card before attempting
   
   PET SYNERGY - ViannaPoes (Activated by Piecie, costs 15 MP, lasts 2 turns): 
@@ -197,6 +239,23 @@ Effect: Gain 35 MP to your active Mosje
 MP Cost: Free
 Requirement: Lvl 1+
 Rarity: ★★★☆☆
+
+------------------------------------------------------------------------
+RONALD KIP
+------------------------------------------------------------------------
+Effect: Gain 50 MP to your active Mosje
+RONALD SYNERGY: If Ronald (The Master Chef) is on field, gain 60 MP instead of 50 MP.
+MP Cost: Free
+Requirement: Any
+Rarity: ★★★☆☆
+
+------------------------------------------------------------------------
+CHEF'S SPECIAL
+------------------------------------------------------------------------
+Effect: If you have Ronald on field: Gain 30 MP for each Piecie card your opponent has. Otherwise: Gain 15 MP.
+MP Cost: 10 MP
+Requirement: Lvl 1+
+Rarity: ★★★★☆
 
 ------------------------------------------------------------------------
 MOMENTUM BOOST
@@ -281,7 +340,7 @@ Rarity: ★★★☆☆
 ------------------------------------------------------------------------
 AFFOE
 ------------------------------------------------------------------------
-Effect: Target opponent loses 15 MP, you gain 10 MP
+Effect: -15 MP of opponent mosje and your mosje gains 10 MP
 MP Cost: 5 MP
 Requirement: Any
 Rarity: ★★☆☆☆
@@ -381,7 +440,7 @@ DIGITAL EQUIPMENT PIECIES
 ------------------------------------------------------------------------
 KEYBOARD
 ------------------------------------------------------------------------
-Effect: If you have a Digital-type Mosje on field: Gain 10 MP and draw 1 card. 
+Effect: Pick a Digital Mosje: Gain 10 MP and draw 1 card. 
 Can be combined with Mouse and Controller for enhanced effects
 MP Cost: Free
 Requirement: Any
@@ -390,7 +449,7 @@ Rarity: ★★☆☆☆
 ------------------------------------------------------------------------
 MOUSE
 ------------------------------------------------------------------------
-Effect: If you have a Digital-type Mosje on field: Gain 10 MP and look at 
+Effect: Pick a Digital Mosje: Gain 10 MP and look at 
 top 2 cards of any deck. Can be combined with Keyboard and Controller for 
 enhanced effects
 MP Cost: Free
@@ -400,7 +459,7 @@ Rarity: ★★☆☆☆
 ------------------------------------------------------------------------
 CONTROLLER
 ------------------------------------------------------------------------
-Effect: If you have a Digital-type Mosje on field: Gain 10 MP and your next 
+Effect: Pick a Digital Mosje: Gain 10 MP and your next 
 Quest roll gets +1. Can be combined with Keyboard and Mouse for enhanced effects
 MP Cost: Free
 Requirement: Any
@@ -413,7 +472,7 @@ PET PROTECTION PIECIES
 ------------------------------------------------------------------------
 VIANNA POES
 ------------------------------------------------------------------------
-Effect: 2 turns: Cless/Hayabusa reduce MP loss by 50%
+Effect: 2 turns: Cless/Hayabusa reduce MP damages/losses/reduction of Quest results or Piecie effects by 50%. This card stays active on the field as long as this effect lasts.
 MP Cost: 15 MP
 Requirement: Any
 Rarity: ★★★☆☆
@@ -695,7 +754,7 @@ CREATIVE QUESTS
 ------------------------------------------------------------------------
 ARTISTIC EXPRESSION
 ------------------------------------------------------------------------
-Requirement: Creative ★★ + Draw 2 cards
+Requirement: Creative ★★ OR Draw 2 cards this turn
 Success: +40 MP
 Failure: -10 MP
 Rarity: ★★

@@ -21,17 +21,24 @@ MP generation. Includes basic attack cards and MP restoration.
 MOSJES (4 CARDS)
 ------------------------------------------------------------------------
 
-[AZN Cless] The Wild Card
-  • Start MP: 10
-  • Key Ability: Risk & Reward + West Synergy + ViannaPoes Pet Synergy
+
+
 
 [Michelle] Iron Tuk
   • Start MP: 0
-  • Key Ability: Tough Gamble (roll for Quest rewards) + Gandoe Synergy
+  • Key Ability: Tough Gamble (Passive, automatic on Quest completion, no cost): Roll: 1-3 = half MP reward, 4-6 = double MP reward. Synergy - Gandoe The Destroyer (Activated by Bowie & Stormey Piecie, costs 15 MP, lasts 2 turns, requires both Mosjes active): Reduce all MP loss by 75% (instead of 50%) + gain 15 MP (both mosjes) per turn
 
-[Alyssa] Fissa Fissa!
-  • Start MP: 10
-  • Key Ability: Party Power (+15 MP when destroying Places)
+[Alyssa] The Bulldozer
+  • Start MP: 0
+  • Key Ability: Unstoppable: Draw 2, discard 1. Attempting Quests +10 MP. If Alyssa loses 30+ MP in one turn, regain 25 MP.
+
+[Gandoe] The Destroyer
+  • Start MP: 0
+  • Key Ability: Elimination Strike (80 MP, once/game, send opponent's lowest-level Mosje to graveyard). Synergy: With Michelle & Bowie & Stormey, reduce all MP loss by 75% and both gain 15 MP/turn (2 turns, 15 MP cost).
+
+[Jisca] The Maestro
+  • Start MP: 0
+  • Key Ability: Perfect Combo: When you activate a Piecie, after resolving its effect, roll a die: 4-6 = activate any card from hand (paying cost). Chain success: opponent loses 15 MP. Chain fail: Jisca loses 10 MP (if 0 MP, ignore).
 
 [Jeffrey] The Strongman
   • Start MP: 20
@@ -172,13 +179,14 @@ Banks on steady MP growth through efficient card play.
 MOSJES (4 CARDS)
 ------------------------------------------------------------------------
 
-[West] The Analyzer
+[Martin] Señor West
   • Start MP: 15
   • Key Ability: Calculated Guess (name card type, gain rewards if correct)
 
-[Coert] Hawaiian Tech Savant
-  • Start MP: 10
-  • Key Ability: Extra Resources (draw +1 for 10 MP) + Binti Food Synergy
+
+[Ronald] The Master Chef
+  • Start MP: 0
+  • Key Ability: Chef’s Synergy (Broodje Döner or Chef’s Special: +20 MP)
 
 [Youri] The Speedrunner
   • Start MP: 0
@@ -340,7 +348,7 @@ MOSJES (4 CARDS)
 
 [Cless] The Teacher
   • Start MP: 10
-  • Key Ability: Teaching Moment (draw/MP on 5-6) + West & ViannaPoes Synergy
+  • Key Ability: Teaching Moment (draw/MP on 5-6) + Martin & ViannaPoes Synergy
 
 [Binti] The Sharp Tongue
   • Start MP: 5

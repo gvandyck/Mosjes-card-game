@@ -78,6 +78,7 @@ A single, dynamic button (`progressPhaseBtn`) controls the game flow. Its text a
 
 2. MAIN PHASE:
    • "Place Piecie" and "Activate Placed" buttons are enabled.
+   • Returning a placed Piecie to hand costs 10 MP and does NOT end the Main Phase.
    • `progressPhaseBtn` shows "End Main Phase". Clicking it moves to Quest Phase.
 
 3. QUEST PHASE:
