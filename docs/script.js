@@ -27,7 +27,7 @@ function isFoodPiecie(cardName) {
     return foodNames.some(name => cardName && cardName.toLowerCase().includes(name.toLowerCase()));
 }
 // --- Deck & Graveyard Modal Logic ---
-const VERSION = "2025-12-29-10";
+const VERSION = "2025-12-22-10";
 function showDeckModal() {
     let myId = 'p1';
     if (myRole === 'p2' || (firebaseEnabled && room && room.p2 === playerId)) myId = 'p2';
