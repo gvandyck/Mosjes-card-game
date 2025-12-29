@@ -462,94 +462,6 @@ function pickDeck(index){
     if (deck.name === 'Digital Control') {
         const ronaldIdx = availableMosjes.findIndex(m => m.id === 'ronald');
         let selectedMosje;
-        if (ronaldIdx !== -1) {
-            selectedMosje = JSON.parse(JSON.stringify(availableMosjes.splice(ronaldIdx, 1)[0]));
-        } else {
-            selectedMosje = JSON.parse(JSON.stringify(availableMosjes[0]));
-        }
-        selectedMosje.mp = selectedMosje.startMp || 0;
-        selectedMosje.level = 1;
-        localState.players[target].mosjes.push(selectedMosje);
-        totalStartMp += selectedMosje.startMp || 0;
-        log(`${target} assigned Starter Mosje: ${selectedMosje.name}`);
-    } else {
-        // Pick 1 starter Mosje randomly
-        if (availableMosjes.length > 0) {
-            const idx = Math.floor(Math.random() * availableMosjes.length);
-            const selectedMosje = JSON.parse(JSON.stringify(availableMosjes.splice(idx, 1)[0]));
-            selectedMosje.mp = selectedMosje.startMp || 0;
-            selectedMosje.level = 1;
-            localState.players[target].mosjes.push(selectedMosje);
-            totalStartMp += selectedMosje.startMp || 0;
-            log(`${target} assigned Starter Mosje: ${selectedMosje.name}`);
-        }
-    }
-    localState.players[target].mp = totalStartMp;
-    // Build Deck: Piecies + Remaining Mosjes
-    localState.players[target].deck = [];
-    // Add Piecies
-    for(let i=0;i<40;i++) localState.players[target].deck.push(JSON.parse(JSON.stringify(deck.piecies[i%deck.piecies.length])));
-    // Add Remaining Mosjes to Deck
-    availableMosjes.forEach(m => {
-        localState.players[target].deck.push(JSON.parse(JSON.stringify(m)));
-    });
-    shuffleLocal(localState.players[target].deck);
-    for(let i=0;i<5;i++){ if(localState.players[target].deck.length) localState.players[target].hand.push(localState.players[target].deck.pop());}
-    // reset draw state for the picker
-    localState.players[target].canDraw = true;
-    localState.players[target].extraDraws = 0;
-    if(firebaseEnabled){ 
-        // Only update THIS player's data to avoid overwriting
-        db.ref('rooms/'+localState.roomCode+'/state/players/'+target).set(localState.players[target]); 
-    }
-    if(localState.players.p1.mosjes.length > 0 && localState.players.p2.mosjes.length > 0){ startMatch(); }
-    renderAll();
-}
-
-function sanitizeState(s) {
-  if(!s) return s;
-  if(s.players) {
-    ['p1','p2'].forEach(k => {
-      if(s.players[k]) {
-        if(!s.players[k].deck) s.players[k].deck = [];
-        if(!s.players[k].hand) s.players[k].hand = [];
-        if(!s.players[k].discard) s.players[k].discard = [];
-        if(!s.players[k].piecies) s.players[k].piecies = [];
-        if(!s.players[k].mosjes) s.players[k].mosjes = [];
-      }
-    });
-  }
-  return s;
-}
-
-function syncState() {
-  if(firebaseEnabled && localState.roomCode) {
-      db.ref('rooms/'+localState.roomCode+'/state').set(localState);
-  }
-}
-
-function startMatch(){ log('Match starting'); renderAll(); if(firebaseEnabled){ db.ref('rooms/'+localState.roomCode+'/state').on('value',snap=>{ const v=snap.val(); if(v){ localState=sanitizeState(v); renderAll(); }}); }}
-
-let lastTurn = localState.currentTurn;
-function checkTurnChangePopup() {
-    // Only show if in network mode and myRole is set
-    if (!firebaseEnabled || !myRole) return;
-    if (localState.currentTurn === myRole && lastTurn !== myRole) {
-        setTimeout(() => {
-            alert("It's your turn!");
-        }, 100);
-    }
-    lastTurn = localState.currentTurn;
-}
-
-const SNELLE_PIECIES = [
-  'FF HAALTJE NEMEN', 'EMERGENCY HEALINGS', 'LUCKY CÓIN', 
-  'COUNTER STRIKKA', 'MOMENTUM RUSH', 'JENSEN', 'SLEUTELPUNTJE'
-];
-
-function isSnellePiecie(cardName) {
-    return SNELLE_PIECIES.includes(cardName.toUpperCase());
-}
 
 function playMosjeFromHand(index) {
     let localKey = 'p1';
@@ -975,72 +887,73 @@ function activatePiecie(index){
 
   if (isDuration) {
       // Special handling for Controller (Conditional Duration)
-      if (cardName === 'Controller') {
-          // Check for Digital Mosje
-          const digitalMosjes = p.mosjes.filter(m => m.type === 'Digital');
-          if (digitalMosjes.length > 0) {
-              // Target specific Digital Mosje if > 1
-              let target = digitalMosjes[0];
-              if (digitalMosjes.length > 1) {
-                  const useFirst = confirm(`Target ${digitalMosjes[0].name}? (OK)\nOr ${digitalMosjes[1].name}? (Cancel)`);
-                  target = useFirst ? digitalMosjes[0] : digitalMosjes[1];
-              }
-              
-              target.mp = (target.mp || 0) + 10;
-              popupMP(activatingPlayerKey, 10);
-              log(`${activatingPlayerKey} gained 10 MP (Controller on ${target.name})`);
-          } else {
-              log(`${activatingPlayerKey} activated Controller but has no Digital Mosje (No effect)`);
-              const item = p.piecies.splice(index, 1)[0]; 
-              p.discard.push(item.card);
-              renderAll();
-              syncState();
-              return;
-          }
-      }
-      
-      // Special handling for Sleutelpuntje
-      if (cardName === 'Sleutelpuntje') {
-          // Prompt for Up/Down
-          const isUp = confirm("Adjust MP UP (+15)? (OK)\nOr DOWN (-15)? (Cancel)");
-          const amount = isUp ? 15 : -15;
-          
-          // Prompt for Target
-          let targetName = "Mosje";
-          let targetM = p.mosjes[0];
-          if (p.mosjes.length > 1) {
-              const useFirst = confirm(`Target ${p.mosjes[0].name}? (OK)\nOr ${p.mosjes[1].name}? (Cancel)`);
-              targetName = useFirst ? p.mosjes[0].name : p.mosjes[1].name;
-              targetM = useFirst ? p.mosjes[0] : p.mosjes[1];
-          } else if (p.mosjes.length === 1) {
-              targetName = p.mosjes[0].name;
-              targetM = p.mosjes[0];
-          }
-          
-          if (targetM) targetM.mp = (targetM.mp || 0) + amount;
-          popupMP(activatingPlayerKey, amount);
-          log(`${activatingPlayerKey} used Sleutelpuntje on ${targetName}: ${amount > 0 ? '+' : ''}${amount} MP`);
-          
-          // Store revert amount for expiration
-          if (!p.durationEffects) p.durationEffects = [];
-          p.durationEffects.push({ name: 'Sleutelpuntje', duration: 1, revertAmount: amount, targetIndex: p.mosjes.indexOf(targetM) });
-          
-          // Mark as active and render
-          itemToCheck.active = true;
-          if(!p.activeEffects) p.activeEffects = [];
-          p.activeEffects.push(cardName);
-          renderAll();
-          syncState();
-          return;
-      }
-
-      // Mark as active
-      itemToCheck.active = true;
-      if(!p.activeEffects) p.activeEffects = [];
-      p.activeEffects.push(cardName);
-      
-      // Log stacking info
-      const stackCount = p.activeEffects.filter(e => e === cardName).length;
+    window.ronaldAbility = function(mosjeIndex) {
+        const myId = (firebaseEnabled && myRole) ? myRole : 'p1';
+        const myPlayer = localState.players[myId];
+        // Only mark ability used after effect completes
+        if (typeof mosjeIndex === 'number' && myPlayer.mosjes && myPlayer.mosjes[mosjeIndex]) {
+            myPlayer.mosjes[mosjeIndex].abilityUsedThisTurn = true;
+        }
+        // Find Food Piecies in hand
+        const foodIndexes = (myPlayer.hand||[]).map((c,i)=>isFoodPiecie(c.name)?i:-1).filter(i=>i!==-1);
+        if (foodIndexes.length === 0) {
+            alert('You must have a Food Piecie in hand to use Ronald\'s ability.');
+            return;
+        }
+        // Prompt to select which Food Piecie to discard (styled like ShowDeckModal)
+        let modal = document.createElement('div');
+        modal.id = 'ronaldAbilityModal';
+        modal.className = 'modal';
+        let cardDiv = document.createElement('div');
+        cardDiv.className = 'card';
+        cardDiv.style.background = 'var(--panel)';
+        cardDiv.style.borderRadius = '10px';
+        cardDiv.style.padding = '20px';
+        cardDiv.style.border = '2px solid var(--accent)';
+        cardDiv.style.width = '90%';
+        cardDiv.style.maxWidth = '440px';
+        cardDiv.innerHTML = `<h2 style='color:var(--accent);margin:0 0 16px 0;text-align:center'>Ronald: Discard a Food Piecie</h2><div id='ronaldFoodList' class='flex' style='gap:20px;flex-wrap:wrap;justify-content:center;'></div><button id='ronaldCancelBtn' class='btn' style='margin-top:18px;'>Cancel</button>`;
+        modal.appendChild(cardDiv);
+        document.body.appendChild(modal);
+        // Render food piecies as selectable cards
+        let foodList = cardDiv.querySelector('#ronaldFoodList');
+        foodList.innerHTML = foodIndexes.map(i => {
+            const c = myPlayer.hand[i];
+            return `<div class='deck-selectable cardView' data-idx='${i}' style='cursor:pointer;transition:transform .1s;'>
+                <div style='font-weight:bold;font-size:1.1em;margin-bottom:6px;'>${c.name}</div>
+                <div style='font-size:0.95em;color:#9fb7b1;'>${c.effect||''}</div>
+            </div>`;
+        }).join('');
+        document.getElementById('ronaldCancelBtn').onclick = function() {
+            document.body.removeChild(modal);
+        };
+        // Card grid click handler (styled like ShowDeckModal)
+        Array.from(foodList.querySelectorAll('.deck-selectable')).forEach(el => {
+            el.onclick = function() {
+                const idx = parseInt(this.getAttribute('data-idx'));
+                const discarded = myPlayer.hand.splice(idx,1)[0];
+                myPlayer.discard.push(discarded);
+                document.body.removeChild(modal);
+                // Mark ability used for correct Mosje
+                if (typeof mosjeIndex === 'number' && myPlayer.mosjes && myPlayer.mosjes[mosjeIndex]) {
+                    myPlayer.mosjes[mosjeIndex].abilityUsedThisTurn = true;
+                }
+                // Now use deck modal for card selection
+                showDeckModal({
+                    selectable: true,
+                    onSelect: function(card, deckIdx) {
+                        // Remove from deck, add to hand
+                        const selected = myPlayer.deck.splice(deckIdx,1)[0];
+                        myPlayer.hand.push(selected);
+                        myPlayer._ronaldRevealUsedThisTurn = true;
+                        log('Ronald ability: Discarded Food Piecie and tutored '+selected.name);
+                        renderAll();
+                        syncState();
+                    }
+                });
+            };
+        });
+    };
       if (stackCount > 1) {
           log(`${cardName} stacked! (Active count: ${stackCount})`);
       }
@@ -2944,31 +2857,35 @@ if (typeof window !== 'undefined') {
             alert('You must have a Food Piecie in hand to use Ronald\'s ability.');
             return;
         }
-                // Prompt to select which Food Piecie to discard (card grid)
+                // Prompt to select which Food Piecie to discard (styled like ShowDeckModal)
                 let modal = document.createElement('div');
                 modal.id = 'ronaldAbilityModal';
                 modal.className = 'modal';
-                modal.innerHTML = `
-                    <div class="card" style="background:var(--panel);border:2px solid var(--accent);max-width:440px;width:95vw;text-align:center;">
-                        <h2 style='color:var(--accent);margin-bottom:18px;'>Ronald: Discard a Food Piecie</h2>
-                        <div id="ronaldFoodGrid" class="flex" style="gap:16px;justify-content:center;flex-wrap:wrap;margin-bottom:18px;">
-                            ${foodIndexes.map(i => {
-                                const c = myPlayer.hand[i];
-                                return `<div class="cardView" data-idx="${i}" style="cursor:pointer;box-shadow:0 2px 8px #0004;transition:transform .1s;">
-                                    <div style="font-weight:bold;font-size:1.1em;margin-bottom:6px;">${c.name}</div>
-                                    <div style="font-size:0.95em;color:#9fb7b1;">${c.effect||''}</div>
-                                </div>`;
-                            }).join('')}
-                        </div>
-                        <button id='ronaldCancelBtn' class='btn' style='margin-top:8px;'>Cancel</button>
-                    </div>
-                `;
+                let cardDiv = document.createElement('div');
+                cardDiv.className = 'card';
+                cardDiv.style.background = 'var(--panel)';
+                cardDiv.style.borderRadius = '10px';
+                cardDiv.style.padding = '20px';
+                cardDiv.style.border = '2px solid var(--accent)';
+                cardDiv.style.width = '90%';
+                cardDiv.style.maxWidth = '440px';
+                cardDiv.innerHTML = `<h2 style='color:var(--accent);margin:0 0 16px 0;text-align:center'>Ronald: Discard a Food Piecie</h2><div id='ronaldFoodList' class='flex' style='gap:20px;flex-wrap:wrap;justify-content:center;'></div><button id='ronaldCancelBtn' class='btn' style='margin-top:18px;'>Cancel</button>`;
+                modal.appendChild(cardDiv);
                 document.body.appendChild(modal);
+                // Render food piecies as selectable cards
+                let foodList = cardDiv.querySelector('#ronaldFoodList');
+                foodList.innerHTML = foodIndexes.map(i => {
+                    const c = myPlayer.hand[i];
+                    return `<div class='deck-selectable cardView' data-idx='${i}' style='cursor:pointer;transition:transform .1s;'>
+                        <div style='font-weight:bold;font-size:1.1em;margin-bottom:6px;'>${c.name}</div>
+                        <div style='font-size:0.95em;color:#9fb7b1;'>${c.effect||''}</div>
+                    </div>`;
+                }).join('');
                 document.getElementById('ronaldCancelBtn').onclick = function() {
                     document.body.removeChild(modal);
                 };
-                // Card grid click handler
-                Array.from(document.querySelectorAll('#ronaldFoodGrid .cardView')).forEach(el => {
+                // Card grid click handler (styled like ShowDeckModal)
+                Array.from(foodList.querySelectorAll('.deck-selectable')).forEach(el => {
                     el.onclick = function() {
                         const idx = parseInt(this.getAttribute('data-idx'));
                         const discarded = myPlayer.hand.splice(idx,1)[0];
@@ -2976,20 +2893,20 @@ if (typeof window !== 'undefined') {
                         document.body.removeChild(modal);
                         // Mark ability used for correct Mosje
                         if (typeof mosjeIndex === 'number' && myPlayer.mosjes && myPlayer.mosjes[mosjeIndex]) {
-                                myPlayer.mosjes[mosjeIndex].abilityUsedThisTurn = true;
+                            myPlayer.mosjes[mosjeIndex].abilityUsedThisTurn = true;
                         }
                         // Now use deck modal for card selection
                         showDeckModal({
-                                selectable: true,
-                                onSelect: function(card, deckIdx) {
-                                        // Remove from deck, add to hand
-                                        const selected = myPlayer.deck.splice(deckIdx,1)[0];
-                                        myPlayer.hand.push(selected);
-                                        myPlayer._ronaldRevealUsedThisTurn = true;
-                                        log('Ronald ability: Discarded Food Piecie and tutored '+selected.name);
-                                        renderAll();
-                                        syncState();
-                                }
+                            selectable: true,
+                            onSelect: function(card, deckIdx) {
+                                // Remove from deck, add to hand
+                                const selected = myPlayer.deck.splice(deckIdx,1)[0];
+                                myPlayer.hand.push(selected);
+                                myPlayer._ronaldRevealUsedThisTurn = true;
+                                log('Ronald ability: Discarded Food Piecie and tutored '+selected.name);
+                                renderAll();
+                                syncState();
+                            }
                         });
                     };
                 });
