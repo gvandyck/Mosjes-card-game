@@ -1,0 +1,554 @@
+================================================================================
+MOSJES STARTER DECKS
+PRE-BUILT DECKS FOR TESTING
+================================================================================
+
+These three starter decks are balanced and ready to test. Each deck is 40-51 
+cards and focuses on a different strategy. Players can choose any deck to 
+playtest the game mechanics.
+
+================================================================================
+DECK 1: "PHYSICAL FORCE"
+================================================================================
+
+Type: Fighting / Aggressive Tempo
+Total Cards: 46
+Strategy: Focus on consistent Physical Quest completion and direct combat. 
+Uses Fighting-type Mosjes to leverage The Gym and Arcade Places for passive 
+MP generation. Includes basic attack cards and MP restoration.
+
+------------------------------------------------------------------------
+MOSJES (4 CARDS)
+------------------------------------------------------------------------
+
+
+
+
+[Michelle] Iron Tuk
+  • Start MP: 0
+  • Key Ability: Tough Gamble (Passive, automatic on Quest completion, no cost): Roll: 1-3 = half MP reward, 4-6 = double MP reward. Synergy - Gandoe The Destroyer (Activated by Bowie & Stormey Piecie, costs 15 MP, lasts 2 turns, requires both Mosjes active): Reduce all MP loss by 75% (instead of 50%) + gain 15 MP (both mosjes) per turn
+
+[Alyssa] The Bulldozer
+  • Start MP: 0
+  • Key Ability: Unstoppable: Draw 2, discard 1. Attempting Quests +10 MP. If Alyssa loses 30+ MP in one turn, regain 25 MP.
+
+[Gandoe] The Destroyer
+  • Start MP: 0
+  • Key Ability: Elimination Strike (80 MP, once/game, send opponent's lowest-level Mosje to graveyard). Synergy: With Michelle & Bowie & Stormey, reduce all MP loss by 75% and both gain 15 MP/turn (2 turns, 15 MP cost).
+
+[Jisca] The Maestro
+  • Start MP: 0
+  • Key Ability: Perfect Combo: When you activate a Piecie, after resolving its effect, roll a die: 4-6 = activate any card from hand (paying cost). Chain success: opponent loses 15 MP. Chain fail: Jisca loses 10 MP (if 0 MP, ignore).
+
+[Jeffrey] The Strongman
+  • Start MP: 20
+  • Key Ability: Brute Force (all Quests +10 MP)
+
+------------------------------------------------------------------------
+PIECIES (18 CARDS)
+------------------------------------------------------------------------
+
+Te Hard Gaan x3
+  • Effect: Opponent loses 25 MP
+  • MP Cost: 15 MP
+
+Snoeiertje x2
+  • Effect: Quest drains 15 MP from opponent
+  • MP Cost: Free
+
+Kleine Taks x2
+  • Effect: Opponent loses 10 MP/turn for 4 turns
+  • MP Cost: 15 MP
+
+Kannetje Melk x3
+  • Effect: Gain 25 MP
+  • MP Cost: Free
+
+Broodje Döner x2
+  • Effect: Gain 35 MP
+  • MP Cost: Free
+
+Momentum Boost x2
+  • Effect: Restore 15 MP, next Quest +10 MP
+  • MP Cost: Free
+
+Energy Surge x2
+  • Effect: Gain 20 MP if under 30 MP
+  • MP Cost: Free
+
+Gun een Piece x2
+  • Effect: Draw 2 cards
+  • MP Cost: Free
+
+Quest Prep x2
+  • Effect: Next Quest roll +2
+  • MP Cost: 10 MP
+
+TweedeKANs x2
+  • Effect: Reroll any die
+  • MP Cost: 5 MP
+
+Slecht Gezet x1
+  • Effect: Destroy Place
+  • MP Cost: Free
+
+Afblijven! x1
+  • Effect: Can't lose MP until next turn
+  • MP Cost: 10 MP
+
+Bowie & Stormey x1
+  • Effect: Pet protection (50-75% MP loss reduction)
+  • MP Cost: 15 MP
+
+ViannaPoes x1
+  • Effect: Pet protection (50% MP loss reduction)
+  • MP Cost: 15 MP
+
+------------------------------------------------------------------------
+SNELLE PIECIES (6 CARDS)
+------------------------------------------------------------------------
+
+FF Haaltje Nemen x2
+  • Effect: Reduce MP loss by 20
+  • MP Cost: 10 MP
+
+Emergency Healings x2
+  • Effect: Restore 25 MP instantly
+  • MP Cost: 10 MP
+
+Momentum Rush x1
+  • Effect: Gain 15 MP + draw 1
+  • MP Cost: Free
+
+Jensen x1
+  • Effect: Ignore Piecie targeting you
+  • MP Cost: 10 MP
+
+------------------------------------------------------------------------
+PLACES (3 CARDS)
+------------------------------------------------------------------------
+
+The Gym x1
+  • Effect: Fighting gain 25-35 MP/turn, others lose 10 MP/turn
+
+Arcade x1
+  • Effect: Physical Mosjes +10 MP when activating Piecies
+
+Obby 1 x1
+  • Effect: Quest rewards +15 MP, all lose 10 MP/turn
+
+------------------------------------------------------------------------
+QUESTS (15 TOTAL - 9 UNIQUE CARDS)
+------------------------------------------------------------------------
+
+Arm Wrestling x2
+  • Requirement: Roll based on Physical trait
+  • Success: +40 MP | Failure: -60 MP
+
+Parkour Challenge x2
+  • Requirement: Pay 10 MP + Roll 4+
+  • Success: +50 MP | Failure: -70 MP
+
+Sprint Race x2
+  • Requirement: Physical ★★+ auto success
+  • Success: +70 MP | Failure: -80 MP
+
+Endurance Test x1
+  • Requirement: 60+ MP OR Phys ★★★
+  • Success: +60 MP | Failure: -70 MP
+
+Leap of Faith x1
+  • Requirement: Roll 1-3=Fail, 4-6=Success
+  • Success: +60 MP | Failure: -20 MP
+
+Speed Run x1
+  • Requirement: Activate 2 Piecies this turn
+  • Success: +60 MP | Failure: -50 MP
+
+================================================================================
+DECK 2: "DIGITAL CONTROL"
+================================================================================
+
+Type: Digital / Information & Deck Manipulation
+Total Cards: 50
+Strategy: Uses deck manipulation, hand control, and calculated plays. Features 
+Digital-type Mosjes with Technical traits to leverage Digital Equipment Piecies. 
+Banks on steady MP growth through efficient card play.
+
+------------------------------------------------------------------------
+MOSJES (4 CARDS)
+------------------------------------------------------------------------
+
+[Martin] Señor West
+  • Start MP: 15
+  • Key Ability: Calculated Guess (name card type, gain rewards if correct)
+
+
+[Ronald] The Master Chef
+  • Start MP: 0
+  • Key Ability: Chef’s Synergy (Broodje Döner or Chef’s Special: +20 MP)
+
+[Youri] The Speedrunner
+  • Start MP: 0
+  • Key Ability: Speed Activate (activate Piecie same turn) + Chris Synergy
+
+[Chris] The All-Rounder
+  • Start MP: 10
+  • Key Ability: Perfect Setup (activate face-down Piecie free) + Youri Synergy
+
+------------------------------------------------------------------------
+PIECIES (28 CARDS)
+------------------------------------------------------------------------
+
+Keyboard x3
+  • Effect: Digital Mosje: +10 MP, draw 1
+  • MP Cost: Free
+
+Mouse x3
+  • Effect: Digital Mosje: +10 MP, look at top 2
+  • MP Cost: Free
+
+Controller x3
+  • Effect: Digital Mosje: +10 MP, Quest roll +1
+  • MP Cost: Free
+
+Kannetje Melk x3
+  • Effect: Gain 25 MP
+  • MP Cost: Free
+
+Broodje Döner x2
+  • Effect: Gain 35 MP
+  • MP Cost: Free
+
+Warm Kannetje Melk x1
+  • Effect: Lose 10 MP, draw 2
+  • MP Cost: Free
+
+Gun een Piece x3
+  • Effect: Draw 2 cards
+  • MP Cost: Free
+
+Zie je die Dingetjes x2
+  • Effect: Look at top 3, pick 1
+  • MP Cost: Free
+
+Bagga of Greed x2
+  • Effect: Draw 3, discard 1
+  • MP Cost: Free
+
+Quest Prep x2
+  • Effect: Next Quest roll +2
+  • MP Cost: 10 MP
+
+Momentum Boost x2
+  • Effect: Restore 15 MP
+  • MP Cost: Free
+
+Slecht Gezet x2
+  • Effect: Destroy Place
+  • MP Cost: Free
+
+Affoe x2
+  • Effect: Opponent loses 15 MP, you gain 10
+  • MP Cost: 5 MP
+
+Laat me chillen! x1
+  • Effect: Reduce next MP loss by 20
+  • MP Cost: 10 MP
+
+Emergency Swap x1
+  • Effect: Copy opponent Mosje ability
+  • MP Cost: 30 MP
+
+------------------------------------------------------------------------
+SNELLE PIECIES (5 CARDS)
+------------------------------------------------------------------------
+
+Lucky Cóin x2
+  • Effect: Reroll dice
+  • MP Cost: 10 MP
+
+Counter Strikka x2
+  • Effect: Redirect Piecie
+  • MP Cost: 15 MP
+
+Jensen x1
+  • Effect: Ignore Piecie targeting you
+  • MP Cost: 10 MP
+
+Sleutelpuntje x1
+  • Effect: Adjust MP by ±15
+  • MP Cost: 5 MP
+
+------------------------------------------------------------------------
+PLACES (4 CARDS)
+------------------------------------------------------------------------
+
+Bank chilling x1
+  • Effect: Mental Mosjes gain MP when drawing 2+
+
+Digital Gaming Stop x1
+  • Effect: Digital Equipment bonuses, mega combo with all 3
+
+Quest Haven x1
+  • Effect: Quest rewards +10 MP
+
+Momentum Factory x1
+  • Effect: All gain 5 MP/turn, no attacks
+
+------------------------------------------------------------------------
+QUESTS (13 TOTAL - 10 UNIQUE CARDS)
+------------------------------------------------------------------------
+
+Strategy Puzzle x2
+  • Requirement: Mental ★★ + Discard 1 card
+  • Success: +25 MP | Failure: -20 MP
+
+Calculate Odds x2
+  • Requirement: Reveal top 3: if 2+ same type succeed
+  • Success: +20 MP | Failure: -10 MP
+
+Quick Thinking x2
+  • Requirement: Roll based on Mental trait
+  • Success: +20 MP | Failure: -20 MP
+
+Debug System x2
+  • Requirement: Tech ★★ + Look at top 5 of any deck
+  • Success: +40 MP | Failure: -60 MP
+
+Precision Work x1
+  • Requirement: Roll based on Tech trait
+  • Success: +70 MP | Failure: -70 MP
+
+Late Night Questing x1
+  • Requirement: Have activated 2+ Digital Equipment
+  • Success: +50 MP | Failure: -30 MP
+
+================================================================================
+DECK 3: "ARTISTIC RHYTHM"
+================================================================================
+
+Type: Artistic / Creative Combo & Support
+Total Cards: 51
+Strategy: Revolves around Creative trait Mosjes, dice manipulation, and MP 
+amplification. Uses DJ 80/20's rerolls and Coert KasteLuck's morning luck for 
+favorable plays. Includes substance cards for high-risk/high-reward gameplay.
+
+------------------------------------------------------------------------
+MOSJES (4 CARDS)
+------------------------------------------------------------------------
+
+[DJ 80/20] The Lucky Mixer
+  • Start MP: 20
+  • Key Ability: Lucky Beats (reroll any die once/turn, gain 10 MP/turn)
+
+[Coert] KasteLuck
+  • Start MP: 20
+  • Key Ability: Morning Luck (free Piecie on 4-6 roll) + Binti Food Synergy
+
+[Cless] The Teacher
+  • Start MP: 10
+  • Key Ability: Teaching Moment (draw/MP on 5-6) + Martin & ViannaPoes Synergy
+
+[Binti] The Sharp Tongue
+  • Start MP: 5
+  • Key Ability: Cutting Words (discard opponent card) + Coert Food Synergy
+
+------------------------------------------------------------------------
+PIECIES (28 CARDS)
+------------------------------------------------------------------------
+
+Kannetje Melk x3
+  • Effect: Gain 25 MP
+  • MP Cost: Free
+
+Broodje Döner x2
+  • Effect: Gain 35 MP
+  • MP Cost: Free
+
+Nature's Gift x2
+  • Effect: Gain 30 MP (40 if Resilient ★★+)
+  • MP Cost: Free
+
+Varkenspootjes x1
+  • Effect: Binti: +60 MP, others: -30 MP
+  • MP Cost: Free
+
+MP Amplifier x3
+  • Effect: Next MP gain +50%
+  • MP Cost: 10 MP
+
+Momentum Boost x2
+  • Effect: Restore 15 MP
+  • MP Cost: Free
+
+Quest Prep x2
+  • Effect: Next Quest roll +2
+  • MP Cost: 10 MP
+
+TweedeKANs x3
+  • Effect: Reroll any die
+  • MP Cost: 5 MP
+
+Gun een Piece x2
+  • Effect: Draw 2 cards
+  • MP Cost: Free
+
+Grammetje Pieter x2
+  • Effect: Roll: lose 15 or gain 30 MP
+  • MP Cost: Free
+
+Dikke Jonko x1
+  • Effect: You +25, opponents +10, all draw 1
+  • MP Cost: Free
+
+Larry / Zegeltje x1
+  • Effect: High risk roll (big rewards or penalties)
+  • MP Cost: Free
+
+Slecht Gezet x2
+  • Effect: Destroy Place
+  • MP Cost: Free
+
+Synergy Field x1
+  • Effect: MP abilities restore +10 for 3 turns
+  • MP Cost: 15 MP
+
+ViannaPoes x1
+  • Effect: Pet protection (50% MP loss reduction)
+  • MP Cost: 15 MP
+
+------------------------------------------------------------------------
+SNELLE PIECIES (7 CARDS)
+------------------------------------------------------------------------
+
+Lucky Cóin x3
+  • Effect: Reroll dice (Creative ★★★: choose result)
+  • MP Cost: 10 MP
+
+Emergency Healings x2
+  • Effect: Restore 25 MP instantly
+  • MP Cost: 10 MP
+
+FF Haaltje Nemen x1
+  • Effect: Reduce MP loss by 20
+  • MP Cost: 10 MP
+
+Momentum Rush x1
+  • Effect: Gain 15 MP + draw 1
+  • MP Cost: Free
+
+------------------------------------------------------------------------
+PLACES (3 CARDS)
+------------------------------------------------------------------------
+
+Skiffa x1
+  • Effect: Artistic reroll dice, Digital lose MP
+
+Quest Haven x1
+  • Effect: Quest rewards +10 MP
+
+Bank chilling x1
+  • Effect: Mental gain MP when drawing 2+
+
+------------------------------------------------------------------------
+QUESTS (11 TOTAL - 9 UNIQUE CARDS)
+------------------------------------------------------------------------
+
+Artistic Expression x2
+  • Requirement: Creative ★★ + Draw 2 cards
+  • Success: +40 MP | Failure: -10 MP
+
+Improvise! x2
+  • Requirement: Creative ★★★ OR pay 15 MP
+  • Success: +50 MP | Failure: -20 MP
+
+Lucky Break x2
+  • Requirement: Roll based on Creative trait
+  • Success: +70 MP | Failure: -40 MP
+
+Create Masterpiece x1
+  • Requirement: Creative ★★ + 3+ Piecies in play
+  • Success: +60 MP | Failure: -20 MP
+
+Inspire Crowd x1
+  • Requirement: Roll based on Social trait
+  • Success: +25 MP | Failure: -20 MP
+
+The Gauntlet x1
+  • Requirement: Complete 3 different actions this turn
+  • Success: +50 MP | Failure: -15 MP
+
+================================================================================
+DECK COMPARISON SUMMARY
+================================================================================
+
+------------------------------------------------------------------------
+DECK 1: PHYSICAL FORCE
+------------------------------------------------------------------------
+Cards: 46
+Playstyle: Aggressive, Direct Combat
+Best For: Players who like straightforward strategies, Physical Quests, and 
+attacking opponents
+
+------------------------------------------------------------------------
+DECK 2: DIGITAL CONTROL
+------------------------------------------------------------------------
+Cards: 50
+Playstyle: Tactical, Information Control
+Best For: Players who enjoy deck manipulation, calculated risks, and card 
+advantage
+
+------------------------------------------------------------------------
+DECK 3: ARTISTIC RHYTHM
+------------------------------------------------------------------------
+Cards: 51
+Playstyle: Creative, Luck Manipulation
+Best For: Players who like dice control, high variance, and combo-oriented 
+gameplay
+
+================================================================================
+NOTES FOR IMPLEMENTATION
+================================================================================
+
+1. Each deck is self-contained and balanced for 2-player matches
+
+2. Quest deck should be shared between both players (shuffle 20-30 total Quests)
+
+3. Place cards can be included in personal decks OR in a shared Place deck
+
+4. Starting hand: 5 cards, starting MP: varies by Mosje (see Mosje tables)
+
+5. Players should select 2 Mosjes from their deck before shuffling
+
+6. All three decks use different strategies but are balanced against each other
+
+7. These are starter decks - advanced players can customize and build their 
+   own decks using the full card database
+
+8. For testing purposes, have both players use different decks to test various 
+   gameplay interactions
+
+================================================================================
+QUICK REFERENCE - GAME SETUP
+================================================================================
+
+STEP 1: Each player chooses one of the three decks
+
+STEP 2: Each player selects 2 Mosjes from their deck (place them in Mosje slots)
+
+STEP 3: Shuffle remaining cards (without the 2 selected Mosjes)
+
+STEP 4: Create shared Quest deck (shuffle 20-30 Quest cards from combined pool)
+
+STEP 5: Each player draws 5 cards as starting hand
+
+STEP 6: Set each Mosje's MP to their starting MP value (varies by Mosje)
+
+STEP 7: All Mosjes start at Level 1
+
+STEP 8: Player 1 begins their turn
+
+================================================================================
+END OF STARTER DECKS
+================================================================================

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>MOSJES - Local MVP</title>
+    <script src="https://www.gstatic.com/firebasejs/10.5.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.5.0/firebase-database-compat.js"></script>
+    <link rel="stylesheet" href="style.css?v=15">
+    <link rel="stylesheet" href="mosje_style.css">
+</head>
+
+<body>
+    <!-- Firebase Config (Hidden) -->
+    <div style="display:none">
+        <input id="apiKey" value="AIzaSyCAGazLyW_o3PNLy4tF8jccqdqd49tn9zk" />
+        <input id="projectId" value="mosjes-card-game"/>
+        <input id="databaseUrl" value="https://mosjes-card-game-default-rtdb.firebaseio.com/"/>
+    </div>
+
+    <!-- Combined Setup Modal -->
+    <div id="setupModal" class="modal" style="display:flex">
+        <div class="card" style="width:90%; max-width:800px">
+            <h2 style="color:var(--accent);margin:0 0 20px 0; text-align:center">Mosjes Card Game</h2>
+            
+            <div style="display:flex; gap:30px; flex-wrap:wrap;">
+                <!-- Left: Deck Selection -->
+                <div style="flex:1; min-width:280px;">
+                    <h3 style="margin-bottom:15px; color:#ddd;">1. Choose Your Deck</h3>
+                    <div class="deck-options" style="display:flex; flex-direction:column; gap:10px;">
+                        <div class="deck-option selected" onclick="selectDeckUI(0, this)" style="border:2px solid var(--accent); padding:12px; cursor:pointer; border-radius:8px; background:rgba(255,255,255,0.05); transition:all 0.2s;">
+                            <div style="font-weight:bold; color:#ff6b6b">Physical Force</div>
+                            <div class="smallMuted">Aggressive, High MP, Strong Attacks</div>
+                        </div>
+                        <div class="deck-option" onclick="selectDeckUI(1, this)" style="border:1px solid #444; padding:12px; cursor:pointer; border-radius:8px; background:rgba(255,255,255,0.05); transition:all 0.2s;">
+                            <div style="font-weight:bold; color:#4ecdc4">Digital Control</div>
+                            <div class="smallMuted">Tactical, Card Advantage, Manipulation</div>
+                        </div>
+                        <div class="deck-option" onclick="selectDeckUI(2, this)" style="border:1px solid #444; padding:12px; cursor:pointer; border-radius:8px; background:rgba(255,255,255,0.05); transition:all 0.2s;">
+                            <div style="font-weight:bold; color:#c44569">Artistic Rhythm</div>
+                            <div class="smallMuted">Combo, Rerolls, High Variance</div>
+                        </div>
+                    </div>
+                    <input type="hidden" id="selectedDeckIndex" value="0">
+                </div>
+
+                <!-- Right: Room Actions -->
+                <div style="flex:1; min-width:280px; border-left:1px solid #333; padding-left:30px;">
+                    <h3 style="margin-bottom:15px; color:#ddd;">2. Start Game</h3>
+                    
+                    <div style="margin-bottom:30px;">
+                        <button class="btn" onclick="handleCreateRoom()" style="width:100%; padding:16px; font-size:1.1em; background:var(--accent); color:white; font-weight:bold; border:none; box-shadow:0 4px 12px rgba(230, 126, 34, 0.3);">Create Room</button>
+                        <div class="smallMuted" style="margin-top:8px; text-align:center;">You will be Player 1</div>
+                    </div>
+
+                    <div style="border-top:1px solid #333; padding-top:20px;">
+                        <div style="display:flex; gap:10px;">
+                            <input id="joinCode" class="input" placeholder="Enter Room Code" style="flex:1; text-transform:uppercase;" />
+                            <button class="btn" onclick="handleJoinRoom()" style="background:#555; color:#eee;">Join</button>
+                        </div>
+                        <div class="smallMuted" style="margin-top:8px; text-align:center;">You will be Player 2</div>
+                        <div id="roomHint" class="smallMuted" style="color:var(--bad); margin-top:10px; min-height:20px;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function selectDeckUI(index, el) {
+            document.getElementById('selectedDeckIndex').value = index;
+            // Update UI
+            document.querySelectorAll('.deck-option').forEach(opt => {
+                opt.style.border = '1px solid #444';
+                opt.classList.remove('selected');
+            });
+            el.style.border = '2px solid var(--accent)';
+            el.classList.add('selected');
+        }
+    </script>
+
+    <div class="topbar">
+        <div style="display:flex;align-items:center;gap:16px">
+            <strong>Room:</strong> <span id="roomCode">--</span>
+            <div id="statusText">Not connected</div>
+        </div>
+        <div id="turnIndicator" class="turn" style="position:static;float:right;margin-left:auto;">Waiting</div>
+    </div>
+
+    <div class="container">
+        <div class="board" style="display:flex;flex-direction:column;gap:16px;">
+    <div class="container">
+        <div class="battlefield">
+            <!-- Left: Shared Place -->
+            <div class="side-zone">
+                <div class="area" style="display:flex;flex-direction:column;align-items:center;">
+                    <div style="font-weight:700;margin-bottom:8px;">Shared Place</div>
+                    <div class="questCard" id="sharedPlace">No Place</div>
+                </div>
+            </div>
+
+            <!-- Center: Play Area -->
+            <div class="play-zone">
+                <!-- Opponent Field -->
+                <div class="area" id="oppArea" style="width:100%;margin-bottom:0;border-bottom-left-radius:0;border-bottom-right-radius:0;border-bottom:none;">
+                    <div class="flex" style="justify-content:space-between">
+                        <div><strong>Opponent</strong> <span style="color:var(--accent); margin-left:10px;">MP: <span id="oppTotalMp">0</span></span></div>
+                    </div>
+                    <div style="display:flex;gap:16px;margin-top:8px;align-items:flex-start;justify-content:center;flex-wrap:wrap;">
+                        <div id="oppMosjes" style="display:flex; gap: 8px;"></div>
+                        <div class="pieSlots" id="oppPiecies"></div>
+                        <div class="smallMuted" style="width:100%;text-align:center;margin-top:4px">Piecies: <span id="oppPieciesCount">0</span></div>
+                    </div>
+                </div>
+
+                <!-- My Field -->
+                <div class="area" id="myArea" style="width:100%;margin-top:0;border-top-left-radius:0;border-top-right-radius:0;border-top:1px solid #29404a;border-bottom-left-radius:0;border-bottom-right-radius:0;border-bottom:none;">
+                    <div class="flex" style="justify-content:space-between">
+                        <div><strong>You</strong> <span style="color:var(--accent); margin-left:10px;">MP: <span id="myTotalMp">0</span></span></div>
+                        <div class="smallMuted">Hand: <span id="myHandCount">0</span></div>
+                    </div>
+                    <div style="display:flex;gap:16px;margin-top:8px;align-items:flex-start;justify-content:center;flex-wrap:wrap;">
+                        <div id="myMosjes" style="display:flex; gap: 8px;"></div>
+                        <div class="pieSlots" id="myPiecies"></div>
+                    </div>
+                    <div style="margin-top:8px;text-align:center;">
+                        <div class="smallMuted">Drag cards here to place them</div>
+                        <button class="btn" id="activatePlacedBtn" onclick="activatePlaced()">Activate Placed</button>
+                    </div>
+                </div>
+
+                <!-- My Hand (attached to bottom of My Field) -->
+                <div class="area" style="margin-top:0;border-top-left-radius:0;border-top-right-radius:0;border-top:1px solid #29404a;">
+                    <div style="display:flex;justify-content:space-between;align-items:center">
+                        <div><strong>Your Hand</strong></div>
+                        <div class="smallMuted">Deck: <span id="myDeckCount">0</span> | Discard:
+                            <span id="myDiscard">0</span></div>
+                    </div>
+                    <div class="hand" id="handArea" style="margin-top:8px"></div>
+                    <div style="margin-top:8px;display:flex;gap:8px">
+                                                <button class="btn" id="drawBtn" onclick="drawCard()">Draw</button>
+                                                <button class="btn" id="showDeckBtn" onclick="showDeckModal()">Show Deck</button>
+                                                <button class="btn" id="showGraveyardBtn" onclick="showGraveyardModal()">Show Graveyard</button>
+                    </div>
+                </div>
+
+                                <!-- Deck Modal -->
+                                <div id="deckModal" class="modal" style="display:none;z-index:1000;align-items:center;justify-content:center;">
+                                    <div class="card" style="max-width:400px;max-height:80vh;overflow-y:auto;padding:24px;">
+                                        <h3 style="margin-top:0;">Your Deck</h3>
+                                        <div id="deckList" style="max-height:60vh;overflow-y:auto;"></div>
+                                        <button class="btn" onclick="closeDeckModal()" style="margin-top:16px;">Close</button>
+                                    </div>
+                                </div>
+
+                                <!-- Graveyard Modal -->
+                                <div id="graveyardModal" class="modal" style="display:none;z-index:1000;align-items:center;justify-content:center;">
+                                    <div class="card" style="max-width:400px;max-height:80vh;overflow-y:auto;padding:24px;">
+                                        <h3 style="margin-top:0;">Your Graveyard</h3>
+                                        <div id="graveyardList" style="max-height:60vh;overflow-y:auto;"></div>
+                                        <button class="btn" onclick="closeGraveyardModal()" style="margin-top:16px;">Close</button>
+                                    </div>
+                                </div>
+
+                <!-- Log -->
+                <div class="area log" id="log" style="margin-top:24px;"></div>
+            </div>
+
+            <!-- Right: Quest Deck -->
+            <div class="side-zone">
+                <div class="area" style="display:flex;flex-direction:column;align-items:center;">
+                    <div style="font-weight:700;margin-bottom:8px;">Quest Deck</div>
+                    <div class="questCard" id="activeQuest">No active quest</div>
+                    <div style="margin-top:12px;">
+                        <button class="btn" id="questBtn" onclick="drawAndAttemptQuest()">Attempt Quest</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+            <!-- My Hand (bottom) -->
+            <div class="area" style="margin-top:0;">
+                <div style="display:flex;justify-content:space-between;align-items:center">
+                    <div><strong>Your Hand</strong></div>
+                    <div class="smallMuted">Deck: <span id="myDeckCount">0</span> | Discard:
+                        <span id="myDiscard">0</span></div>
+                </div>
+                <div class="hand" id="handArea" style="margin-top:8px"></div>
+                <div style="margin-top:8px;display:flex;gap:8px">
+                    <button class="btn" id="drawBtn" onclick="drawCard()">Draw</button>
+                    <button class="btn" id="endMainBtn" onclick="endMainPhase()">End Main</button>
+                    <button class="btn btnDanger" id="endTurnBtn" onclick="endTurn()">End Turn</button>
+                </div>
+            </div>
+            <div class="area log" id="log"></div>
+        </div>
+    </div>
+    <script src="advanced_logic.js?v=13"></script>
+    <script src="script.js?v=13"></script>
+</body>
+
+</html>
