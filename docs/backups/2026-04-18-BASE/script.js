@@ -1,0 +1,3 @@
+// SNELLE_PIECIES and isSnellePiecie are now defined in abilities.js for modular use
+
+// ...existing code...

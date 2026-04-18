@@ -1,0 +1,23 @@
+/* New Mosje Card Design */
+.mosje-card {
+    width: 280px;
+    height: 400px;
+    border-radius: 16px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+    background-color: #1a1a2e;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border: 2px solid #333;
+    transition: transform 0.2s;
+}
+
+.mosje-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.6);
+}
+
+/* ...existing code... */
